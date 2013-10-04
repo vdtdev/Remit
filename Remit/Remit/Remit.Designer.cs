@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Remit));
             this.layoutTable = new System.Windows.Forms.TableLayoutPanel();
             this.lHeadS = new System.Windows.Forms.Label();
             this.lHeadM = new System.Windows.Forms.Label();
@@ -191,6 +192,7 @@
             this.Controls.Add(this.layoutTable);
             this.Font = new System.Drawing.Font("Calibri", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Remit";
             this.Text = "Remit";
