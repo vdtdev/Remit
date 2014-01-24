@@ -36,11 +36,13 @@ namespace Remit
         private int days,hours, minutes, seconds;
         private VisualStyleRenderer vsr;
         private VisualStyleElement vse;
+        
         /// <summary>
         /// Class constructor accepting a starting time value
         /// </summary>
         /// <param name="time">Array of integers specifying 
         /// <code>{days,hours,minutes,seconds}</code>
+        /// </param>
         public Micro(int[] time)
         {
 
