@@ -36,18 +36,55 @@ namespace Remit
         private int days,hours, minutes, seconds;
         private VisualStyleRenderer vsr;
         private VisualStyleElement vse;
+        
         /// <summary>
-        /// Class constructor
+        /// Class constructor accepting a starting time value
+        /// </summary>
+        /// <param name="time">Array of integers specifying 
+        /// <code>{days,hours,minutes,seconds}</code>
+        /// </param>
+        public Remit(int[] time)
+        {
+            /* set the timer values, so that it can continue if it just 
+             * switched over from normal mode */
+            days = time[0];
+            hours = time[1];
+            minutes = time[2];
+            seconds = time[3];
+
+            bool vs = true; // visual styles work
+            InitializeComponent();
+            /* Just encase something odd happens and visual styles aren't available, don't
+             * break the program entirely :) */
+            try
+            {
+                vse = VisualStyleElement.Taskbar.BackgroundTop.Normal;
+                vsr = new VisualStyleRenderer(vse);
+            }
+            catch (Exception ex)
+            {
+                vs = false; // ok, no they don't :(
+                MessageBox.Show(
+                    String.Format("Unable to aquire Visual Style renderer:\n {0}", ex.Message),
+                    "Problem", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            // don't bother forcing user painting if we couldn't get the vsr
+            if (vs)
+            {
+                this.SetStyle(ControlStyles.UserPaint, true);
+                this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            }
+
+
+        }
+
+        /// <summary>
+        /// Default constructor for the Remit timer window
         /// </summary>
         public Remit()
-        {   
-            vse = VisualStyleElement.Taskbar.BackgroundTop.Normal;
-            vsr = new VisualStyleRenderer(vse);
-            
-            InitializeComponent();
-            this.SetStyle(ControlStyles.UserPaint, true);
-            this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-
+            : this(new int[] { 0, 0, 0, 0 })
+        {
+            // main constructor handles things :]
         }
         /// <summary>
         /// Painting override to render the visual style based background
