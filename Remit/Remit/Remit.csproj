@@ -103,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Remit.resx">
       <DependentUpon>Remit.cs</DependentUpon>
@@ -118,6 +119,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\remit_micro_icons_play.png" />
+    <None Include="Resources\remit_micro_icons_reset.png" />
+    <None Include="Resources\remit_micro_icons_stop.png" />
     <Content Include="retim.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
