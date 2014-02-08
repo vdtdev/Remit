@@ -41,6 +41,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.lHeadD = new System.Windows.Forms.Label();
             this.ticker = new System.Windows.Forms.Timer(this.components);
+            this.btnMicro = new System.Windows.Forms.Button();
             this.layoutTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +55,7 @@
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.layoutTable.Controls.Add(this.btnMicro, 5, 0);
             this.layoutTable.Controls.Add(this.lHeadS, 4, 0);
             this.layoutTable.Controls.Add(this.lHeadM, 3, 0);
             this.layoutTable.Controls.Add(this.lHeadH, 2, 0);
@@ -70,6 +72,9 @@
             this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.layoutTable.Size = new System.Drawing.Size(304, 162);
             this.layoutTable.TabIndex = 0;
             // 
@@ -184,6 +189,19 @@
             this.ticker.Interval = 1000;
             this.ticker.Tick += new System.EventHandler(this.ticker_Tick);
             // 
+            // btnMicro
+            // 
+            this.btnMicro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMicro.ForeColor = System.Drawing.Color.Lime;
+            this.btnMicro.Location = new System.Drawing.Point(287, 3);
+            this.btnMicro.Name = "btnMicro";
+            this.btnMicro.Size = new System.Drawing.Size(14, 16);
+            this.btnMicro.TabIndex = 11;
+            this.btnMicro.Tag = "Reset";
+            this.btnMicro.Text = "-";
+            this.btnMicro.UseVisualStyleBackColor = true;
+            this.btnMicro.Click += new System.EventHandler(this.btnMicro_Click);
+            // 
             // Remit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +233,7 @@
         private System.Windows.Forms.Label lHeadH;
         private System.Windows.Forms.Label lHeadD;
         private System.Windows.Forms.Timer ticker;
+        private System.Windows.Forms.Button btnMicro;
     }
 }
 

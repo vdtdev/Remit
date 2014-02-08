@@ -32,6 +32,10 @@ namespace Remit
     /// </summary>
     public partial class Micro : Form
     {
+        /// <summary>
+        /// Fires when the micro-mode toggle button is clicked
+        /// </summary>
+        public EventHandler ExitMicroModeEvent;
         private bool Running = false;
         private int days,hours, minutes, seconds;
         private VisualStyleRenderer vsr;
@@ -43,7 +47,10 @@ namespace Remit
         /// <param name="time">Array of integers specifying 
         /// <code>{days,hours,minutes,seconds}</code>
         /// </param>
-        public Micro(int[] time)
+        /// <param name="started">
+        /// Indicates if the timer has already started or not
+        /// </param>
+        public Micro(int[] time,bool started,ref Timer t)
         {
 
             /* set the timer values, so that it can continue if it just 
@@ -52,7 +59,7 @@ namespace Remit
             hours = time[1];
             minutes = time[2];
             seconds = time[3];
-            
+            ticker = t;
             bool vs = true; // visual styles work
             InitializeComponent();
             /* Just encase something odd happens and visual styles aren't available, don't
@@ -76,16 +83,21 @@ namespace Remit
                 this.SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             }
 
+            if (started)
+            {
+                btnStart_Click(this, null);
+            }
+
         }
 
         /// <summary>
         /// Default class constructor
         /// </summary>
-        public Micro():this(new int[]{0,0,0,0})
+      /*  public Micro():this(new int[]{0,0,0,0},false)
         {
             // main constructor taks care of things   
         }
-
+        */
         /// <summary>
         /// Painting override to render the visual style based background
         /// </summary>
@@ -168,6 +180,37 @@ namespace Remit
             updateDisplay();
         }
 
-        
+        /// <summary>
+        /// Micro button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnMicro_Click(object sender, EventArgs e)
+        {
+            ExitMicroModeEvent.Invoke(sender, e);
+        }
+
+        /// <summary>
+        /// If the timer is running. Used to relate the running state to
+        /// macro mode when micro exits
+        /// </summary>
+        public bool Active
+        {
+            get
+            {
+                return ticker.Enabled;
+            }
+        }
+
+        /// <summary>
+        /// Current timer time
+        /// </summary>
+        public int[] Time
+        {
+            get
+            {
+                return new int[] { days, minutes, hours, seconds };
+            }
+        }
     }
 }

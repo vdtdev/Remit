@@ -168,6 +168,62 @@ namespace Remit
             updateDisplay();
         }
 
-        
+        private void btnMicro_Click(object sender, EventArgs e)
+        {
+            Micro microMode = new Micro(new int[] { days, hours, minutes, seconds },ticker.Enabled, ref ticker);
+            microMode.Show();
+            microMode.FormClosed+=new FormClosedEventHandler(onMicroClose);
+            microMode.ExitMicroModeEvent += new EventHandler(onExitMicroMode);
+            this.Hide();
+            
+        }
+
+        /// <summary>
+        /// Exit micro mode and restore this view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void onExitMicroMode(object sender, EventArgs e)
+        {
+            //this.Show();
+            Button f = (Button)sender;
+            Micro m = (Micro)f.FindForm();
+            this.Show();
+            int[] t = m.Time;
+            days = t[0];
+            hours = t[1];
+            minutes = t[2];
+            seconds = t[3];
+            this.ticker.Enabled = m.Active;
+            //e.Cancel = true;
+            m.Close();
+            this.Show();
+        }
+
+        /// <summary>
+        /// Handles exiting the program when a micro-mode view of a timer is closed
+        /// If this form is hidden, then assume we are exiting and quit
+        /// Otherwise, copy the time from the micro form and use it as the new time
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void onMicroClose(object sender, EventArgs e)
+        {
+            if (Visible == false)
+            {
+                Application.DoEvents();
+                Application.Exit();
+            }
+            else
+            {
+                Micro m = (Micro)sender;
+                int[] t = m.Time;
+                days = t[0];
+                hours = t[1];
+                minutes = t[2];
+                seconds = t[3];
+                updateDisplay();
+            }
+        }
     }
 }
