@@ -35,7 +35,7 @@ namespace Remit
         /// <summary>
         /// Fires when the micro-mode toggle button is clicked
         /// </summary>
-        public EventHandler ExitMicroModeEvent;
+       // public EventHandler ExitMicroModeEvent;
         private bool Running = false;
         private int days,hours, minutes, seconds;
         private VisualStyleRenderer vsr;
@@ -50,7 +50,7 @@ namespace Remit
         /// <param name="started">
         /// Indicates if the timer has already started or not
         /// </param>
-        public Micro(int[] time,bool started,ref Timer t)
+        public Micro(int[] time,bool started)//,ref Timer t)
         {
 
             /* set the timer values, so that it can continue if it just 
@@ -59,7 +59,6 @@ namespace Remit
             hours = time[1];
             minutes = time[2];
             seconds = time[3];
-            ticker = t;
             bool vs = true; // visual styles work
             InitializeComponent();
             /* Just encase something odd happens and visual styles aren't available, don't
@@ -93,11 +92,11 @@ namespace Remit
         /// <summary>
         /// Default class constructor
         /// </summary>
-      /*  public Micro():this(new int[]{0,0,0,0},false)
+        public Micro():this(new int[]{0,0,0,0},false)
         {
             // main constructor taks care of things   
         }
-        */
+        
         /// <summary>
         /// Painting override to render the visual style based background
         /// </summary>
@@ -180,7 +179,7 @@ namespace Remit
             updateDisplay();
         }
 
-        /// <summary>
+       /* /// <summary>
         /// Micro button is clicked
         /// </summary>
         /// <param name="sender"></param>
@@ -188,7 +187,7 @@ namespace Remit
         private void btnMicro_Click(object sender, EventArgs e)
         {
             ExitMicroModeEvent.Invoke(sender, e);
-        }
+        }*/
 
         /// <summary>
         /// If the timer is running. Used to relate the running state to

@@ -35,7 +35,7 @@ namespace Remit
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Remit());
+            Application.Run(new Micro());
         }
     }
 }

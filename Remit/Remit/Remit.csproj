@@ -86,12 +86,6 @@
     <Compile Include="Micro.Designer.cs">
       <DependentUpon>Micro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Remit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Remit.Designer.cs">
-      <DependentUpon>Remit.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Micro.resx">
@@ -107,9 +101,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Remit.resx">
-      <DependentUpon>Remit.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Classes.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

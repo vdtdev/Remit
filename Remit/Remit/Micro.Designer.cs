@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Micro));
             this.layoutTable = new System.Windows.Forms.TableLayoutPanel();
+            this.btnReset = new System.Windows.Forms.Button();
             this.lHeadS = new System.Windows.Forms.Label();
             this.lHeadM = new System.Windows.Forms.Label();
             this.lHeadH = new System.Windows.Forms.Label();
@@ -38,10 +39,8 @@
             this.lDaysHourMin = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
-            this.btnMicro = new System.Windows.Forms.Button();
             this.lHeadD = new System.Windows.Forms.Label();
             this.ticker = new System.Windows.Forms.Timer(this.components);
-            this.btnReset = new System.Windows.Forms.Button();
             this.layoutTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +62,6 @@
             this.layoutTable.Controls.Add(this.lDaysHourMin, 1, 1);
             this.layoutTable.Controls.Add(this.btnStart, 0, 1);
             this.layoutTable.Controls.Add(this.btnStop, 0, 2);
-            this.layoutTable.Controls.Add(this.btnMicro, 0, 3);
             this.layoutTable.Controls.Add(this.lHeadD, 1, 0);
             this.layoutTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutTable.Location = new System.Drawing.Point(0, 0);
@@ -76,6 +74,17 @@
             this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.layoutTable.Size = new System.Drawing.Size(304, 77);
             this.layoutTable.TabIndex = 0;
+            // 
+            // btnReset
+            // 
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReset.Image = global::Remit.Properties.Resources.remit_micro_icons_play;
+            this.btnReset.Location = new System.Drawing.Point(3, 58);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(23, 15);
+            this.btnReset.TabIndex = 11;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // lHeadS
             // 
@@ -166,19 +175,6 @@
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
-            // btnMicro
-            // 
-            this.btnMicro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMicro.ForeColor = System.Drawing.Color.Lime;
-            this.btnMicro.Location = new System.Drawing.Point(287, 58);
-            this.btnMicro.Name = "btnMicro";
-            this.btnMicro.Size = new System.Drawing.Size(14, 16);
-            this.btnMicro.TabIndex = 4;
-            this.btnMicro.Tag = "Reset";
-            this.btnMicro.Text = "-";
-            this.btnMicro.UseVisualStyleBackColor = true;
-            this.btnMicro.Click += new System.EventHandler(this.btnMicro_Click);
-            // 
             // lHeadD
             // 
             this.lHeadD.AutoSize = true;
@@ -195,17 +191,6 @@
             // 
             this.ticker.Interval = 1000;
             this.ticker.Tick += new System.EventHandler(this.ticker_Tick);
-            // 
-            // btnReset
-            // 
-            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReset.Image = global::Remit.Properties.Resources.remit_micro_icons_play;
-            this.btnReset.Location = new System.Drawing.Point(3, 58);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(23, 15);
-            this.btnReset.TabIndex = 11;
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // Micro
             // 
@@ -232,7 +217,6 @@
         private System.Windows.Forms.Label lDaysHourMin;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
-        private System.Windows.Forms.Button btnMicro;
         private System.Windows.Forms.Label lHeadS;
         private System.Windows.Forms.Label lHeadM;
         private System.Windows.Forms.Label lHeadH;
