@@ -41,6 +41,7 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.lHeadD = new System.Windows.Forms.Label();
             this.ticker = new System.Windows.Forms.Timer(this.components);
+            this.btnNew = new System.Windows.Forms.Button();
             this.layoutTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,6 @@
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutTable.Controls.Add(this.btnReset, 0, 3);
             this.layoutTable.Controls.Add(this.lHeadS, 4, 0);
             this.layoutTable.Controls.Add(this.lHeadM, 3, 0);
             this.layoutTable.Controls.Add(this.lHeadH, 2, 0);
@@ -63,6 +63,8 @@
             this.layoutTable.Controls.Add(this.btnStart, 0, 1);
             this.layoutTable.Controls.Add(this.btnStop, 0, 2);
             this.layoutTable.Controls.Add(this.lHeadD, 1, 0);
+            this.layoutTable.Controls.Add(this.btnNew, 5, 3);
+            this.layoutTable.Controls.Add(this.btnReset, 0, 3);
             this.layoutTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutTable.Location = new System.Drawing.Point(0, 0);
             this.layoutTable.Name = "layoutTable";
@@ -78,7 +80,7 @@
             // btnReset
             // 
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReset.Image = global::Remit.Properties.Resources.remit_micro_icons_play;
+            this.btnReset.Image = global::Remit.Properties.Resources.remit_micro_icons_reset;
             this.btnReset.Location = new System.Drawing.Point(3, 58);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(23, 15);
@@ -192,6 +194,18 @@
             this.ticker.Interval = 1000;
             this.ticker.Tick += new System.EventHandler(this.ticker_Tick);
             // 
+            // btnNew
+            // 
+            this.btnNew.AccessibleDescription = "Create new instance of Remit";
+            this.btnNew.AccessibleName = "New Instance";
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNew.Image = global::Remit.Properties.Resources.remit_micro_icons_reset;
+            this.btnNew.Location = new System.Drawing.Point(287, 58);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(14, 15);
+            this.btnNew.TabIndex = 12;
+            this.btnNew.UseVisualStyleBackColor = true;
+            // 
             // Micro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,6 +237,7 @@
         private System.Windows.Forms.Label lHeadD;
         private System.Windows.Forms.Timer ticker;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnNew;
     }
 }
 
