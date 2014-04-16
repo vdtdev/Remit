@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("vdtdev")]
 [assembly: AssemblyProduct("Remit")]
-[assembly: AssemblyCopyright("2013, vdtdev")]
+[assembly: AssemblyCopyright("2013-2014, vdtdev")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

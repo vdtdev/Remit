@@ -213,7 +213,10 @@ namespace Remit
             }
         }
 
-        public String TaskTitle
+        /// <summary>
+        /// Title of the task the timer is timing
+        /// </summary>
+         public String TaskTitle
         {
             get { return taskTitle; }
             set
@@ -225,7 +228,17 @@ namespace Remit
 
         private void btnTitle_Click(object sender, EventArgs e)
         {
-            
+            DialogTask dt = new DialogTask();
+            if (dt.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                TaskTitle = dt.TaskTitle;
+            }
+            dt.Dispose();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Application.ExecutablePath);
         }
     }
 }
