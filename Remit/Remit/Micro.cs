@@ -40,7 +40,8 @@ namespace Remit
         private int days,hours, minutes, seconds;
         private VisualStyleRenderer vsr;
         private VisualStyleElement vse;
-        
+        private String taskTitle = String.Empty;
+
         /// <summary>
         /// Class constructor accepting a starting time value
         /// </summary>
@@ -210,6 +211,21 @@ namespace Remit
             {
                 return new int[] { days, minutes, hours, seconds };
             }
+        }
+
+        public String TaskTitle
+        {
+            get { return taskTitle; }
+            set
+            {
+                taskTitle = value;
+                this.Text = taskTitle + " [remit]";
+            }
+        }
+
+        private void btnTitle_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Micro));
             this.layoutTable = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTitle = new System.Windows.Forms.Button();
             this.lHeadS = new System.Windows.Forms.Label();
             this.lHeadM = new System.Windows.Forms.Label();
             this.lHeadH = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutTable.Controls.Add(this.button1, 4, 2);
+            this.layoutTable.Controls.Add(this.btnTitle, 4, 2);
             this.layoutTable.Controls.Add(this.lHeadS, 4, 0);
             this.layoutTable.Controls.Add(this.lHeadM, 3, 0);
             this.layoutTable.Controls.Add(this.lHeadH, 2, 0);
@@ -79,18 +79,19 @@
             this.layoutTable.Size = new System.Drawing.Size(304, 77);
             this.layoutTable.TabIndex = 0;
             // 
-            // button1
+            // btnTitle
             // 
-            this.button1.AccessibleDescription = "Give timer a descriptive title";
-            this.button1.AccessibleName = "Name timer";
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(285, 35);
-            this.button1.Margin = new System.Windows.Forms.Padding(1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(16, 16);
-            this.button1.TabIndex = 13;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTitle.AccessibleDescription = "Give timer a descriptive title";
+            this.btnTitle.AccessibleName = "Name timer";
+            this.btnTitle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTitle.Image = ((System.Drawing.Image)(resources.GetObject("btnTitle.Image")));
+            this.btnTitle.Location = new System.Drawing.Point(285, 35);
+            this.btnTitle.Margin = new System.Windows.Forms.Padding(1);
+            this.btnTitle.Name = "btnTitle";
+            this.btnTitle.Size = new System.Drawing.Size(16, 16);
+            this.btnTitle.TabIndex = 13;
+            this.btnTitle.UseVisualStyleBackColor = true;
+            this.btnTitle.Click += new System.EventHandler(this.btnTitle_Click);
             // 
             // lHeadS
             // 
@@ -254,7 +255,7 @@
         private System.Windows.Forms.Timer ticker;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTitle;
     }
 }
 

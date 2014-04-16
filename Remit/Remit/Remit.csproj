@@ -76,10 +76,18 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DialogTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogTask.Designer.cs">
+      <DependentUpon>DialogTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Micro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DialogTask.resx">
+      <DependentUpon>DialogTask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Micro.resx">
       <DependentUpon>Micro.cs</DependentUpon>
     </EmbeddedResource>
