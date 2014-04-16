@@ -116,6 +116,9 @@
     <None Include="Resources\remit_micro_icons_play.png" />
     <None Include="Resources\remit_micro_icons_reset.png" />
     <None Include="Resources\remit_micro_icons_stop.png" />
+    <None Include="Resources\remit_micro_icons_new.png" />
+    <None Include="Resources\remit_new.png" />
+    <None Include="Resources\title.png" />
     <Content Include="retim.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
